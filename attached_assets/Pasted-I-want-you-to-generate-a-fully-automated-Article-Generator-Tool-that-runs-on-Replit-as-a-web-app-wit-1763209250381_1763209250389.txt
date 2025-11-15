@@ -1,0 +1,92 @@
+I want you to generate a fully automated Article Generator Tool that runs on Replit as a web app with a GUI. The tool must allow selecting either Groq API or Gemini API for article generation. The tool must:
+
+1. Web Interface
+
+Run on Replit’s hosted URL (localhost for local testing)
+
+Simple GUI with:
+
+Textarea for Keyword | URL lines (one per line)
+
+Input field for API key
+
+Dropdown to select Groq API or Gemini API
+
+Input field for number of articles per keyword
+
+Start Generating button
+
+Live status log showing:
+
+“Generating Article 1…”
+
+“Cleaning text…”
+
+“Saving files…”
+
+“ZIP exported successfully”
+
+2. Article Generation
+
+For each line:
+
+Split into Keyword and URL
+
+Use selected API (Groq or Gemini) with this prompt (replace dynamically):
+
+Write 900 to 1000 words article on these keywords "{{keyword}}". I am creating this article for link building, this is the website url for helping "{{url}}". Also give me the title of the article, do not use headings, do not use bullet points, do not mention or add website URL, do not use curved apostrophes, article and keywords must be in english.
+
+
+Clean the response:
+
+Replace ’ → nothing
+
+Replace ' → nothing
+
+Replace — → space
+
+3. Saving and Export
+
+Create an output folder in the project
+
+Create a folder per article:
+
+Folder name: Article_<number>_<keyword>
+
+Inside, save article.txt with:
+
+Keyword
+
+URL
+
+Cleaned article
+
+After all articles, create a ZIP file containing all article folders
+
+Provide a download link for the ZIP in the GUI
+
+4. Technical Requirements
+
+Use Python with Flask or FastAPI for backend (or Node.js if preferred)
+
+Web interface using HTML/JS served by backend
+
+Async generation so the interface does not freeze
+
+Allow large inputs (20+ keywords)
+
+Provide easy instructions to run on Replit
+
+Use only necessary libraries (requests, zipfile, flask, fastapi, axios, archiver, etc.)
+
+Make all code professional, stable, and fully functional
+
+5. Extra Features
+
+Ability to select API dynamically: Groq API or Gemini API
+
+Live logging for each article generation step
+
+Automatic cleaning and folder/ZIP creation
+
+Simple, user-friendly web interface accessible from browser

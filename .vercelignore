@@ -1,0 +1,13 @@
+
+node_modules
+.replit
+.config
+output
+*.log
+.env.local
+.git
+client/src
+server
+shared
+tsconfig.json
+vite.config.ts
